@@ -1,24 +1,24 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { Card, Button, Row, Col } from 'react-bootstrap'
 import { ethers } from "ethers"
-import { Row, Col, Card, Button } from 'react-bootstrap'
 
-const Home = ({ marketplace, nft }) => {
+const Home = ({ myMarket, myNft }) => {
   const [loading, setLoading] = useState(true)
   const [items, setItems] = useState([])
   const loadMarketplaceItems = async () => {
     // Load all unsold items
-    const itemCount = await marketplace.itemCount()
+    const itemCount = await myMarket.itemCount()
     let items = []
     for (let i = 1; i <= itemCount; i++) {
-      const item = await marketplace.items(i)
+      const item = await myMarket.items(i)
       if (!item.sold) {
-        // get uri url from nft contract
-        const uri = await nft.tokenURI(item.tokenId)
-        // use uri to fetch the nft metadata stored on ipfs 
+        // get uri url from myNft contract
+        const uri = await myNft.tokenURI(item.tokenId)
+        // use uri to fetch the myNft metadata stored on ipfs 
         const response = await fetch(uri)
         const metadata = await response.json()
         // get total price of item (item price + fee)
-        const totalPrice = await marketplace.getTotalPrice(item.itemId)
+        const totalPrice = await myMarket.getTotalPrice(item.itemId)
         // Add item to items array
         items.push({
           totalPrice,
@@ -35,7 +35,7 @@ const Home = ({ marketplace, nft }) => {
   }
 
   const buyMarketItem = async (item) => {
-    await (await marketplace.purchaseItem(item.itemId, { value: item.totalPrice })).wait()
+    await (await myMarket.purchaseItem(item.itemId, { value: item.totalPrice })).wait()
     loadMarketplaceItems()
   }
 
@@ -55,7 +55,7 @@ const Home = ({ marketplace, nft }) => {
             {items.map((item, idx) => (
               <Col key={idx} className="overflow-hidden">
                 <Card>
-                  <Card.Img variant="top" src={item.image} />
+                  <Card.Img src={item.image} />
                   <Card.Body color="secondary">
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text>
@@ -75,8 +75,9 @@ const Home = ({ marketplace, nft }) => {
           </Row>
         </div>
         : (
-          <main style={{ padding: "1rem 0" }}>
-            <h2>No listed assets</h2>
+
+          <main style={{ padding: "3rem 0" }}>
+            <h2>You don't have any assets</h2>
           </main>
         )}
     </div>
