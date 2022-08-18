@@ -7,8 +7,8 @@ import { create as ipfsHttpClient } from 'ipfs-http-client'
 
 const ipfsClient = require('ipfs-http-client');
 // const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
-const projectId = '2DRXCCq048qwAilfcYM2w6PSure';
-const projectSecret = '8ca127e56b6db9162d939d9670371a1d';
+const projectId = '';
+const projectSecret = '';
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
 const client = ipfsClient.create({
   host: 'ipfs.infura.io',
