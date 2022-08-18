@@ -4,19 +4,20 @@ import { Button, Container, Navbar, Nav } from 'react-bootstrap'
 
 const MyNavigation = ({ myHandler, account }) => {
     return (
-        <Navbar style={{ backgroundColor: "#666" }}>
+        <Navbar className="text-white" style={{ backgroundColor: "#4A148C" }}>
             <Container>
                 <Navbar.Brand href="https://www.iiitd.ac.in/">
-                    <img src={iiitdIcon}  height="40" width="80" /> Marketplace Of IIITD
+                    <img src={iiitdIcon}  height="40" width="80"/><span  style={{fontSize: "25px", color:"white", margin:"12px"}}>MαɾƙҽƚPʅαƈҽ</span> 
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/create">Create</Nav.Link>
-                        <Nav.Link as={Link} to="/my-listed-items">My Listed Items</Nav.Link>
-                        <Nav.Link as={Link} to="/my-purchases">My Purchases</Nav.Link>
+                    <Nav className="me-auto mx-5" fill variant="tabs" size="lg">
+                        <Nav.Item><Nav.Link className="px-5 py-3" style={{color:"white"}} as={Link} to="/">ℍ𝕠𝕞𝕖</Nav.Link></Nav.Item>
+                        
+                        <Nav.Item><Nav.Link className="px-5 py-3" style={{color:"white"}} as={Link} to="/create">ℂ𝕣𝕖𝕒𝕥𝕖</Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link className="px-5 py-3" style={{color:"white"}} as={Link} to="/my-listed-items">𝕄𝕪 𝕃𝕚𝕤𝕥𝕖𝕕 𝕀𝕥𝕖𝕞𝕤</Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link className="px-5 py-3" style={{color:"white"}} as={Link} to="/my-purchases">𝕄𝕪 ℙ𝕦𝕣𝕔𝕙𝕒𝕤𝕖𝕤</Nav.Link></Nav.Item>
                     </Nav>
 
                     <Nav>

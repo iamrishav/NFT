@@ -44,7 +44,7 @@ const Home = ({ myMarket, myNft }) => {
   }, [])
   if (loading) return (
     <main style={{ padding: "1rem 0" }}>
-      <h2>Loading...</h2>
+      <h2 style={{color:"white"}} >Loading...</h2>
     </main>
   )
   return (
@@ -54,17 +54,17 @@ const Home = ({ myMarket, myNft }) => {
           <Row xs={1} md={2} lg={4} className="g-4 py-5">
             {items.map((item, idx) => (
               <Col key={idx} className="overflow-hidden">
-                <Card>
-                  <Card.Img src={item.image} />
+                <Card style={{padding: "12px"}}>
+                  <Card.Img src={item.image} style={{height:"300px"}}/>
                   <Card.Body color="secondary">
                     <Card.Title>{item.name}</Card.Title>
-                    <Card.Text>
+                    <Card.Text style={{height:"60px"}}>
                       {item.description}
                     </Card.Text>
                   </Card.Body>
                   <Card.Footer>
                     <div className='d-grid'>
-                      <Button onClick={() => buyMarketItem(item)} variant="primary" size="lg">
+                      <Button onClick={() => buyMarketItem(item)} variant="primary" size="lg" style={{backgroundColor: '#4A148C'}}>
                         Buy for {ethers.utils.formatEther(item.totalPrice)} ETH
                       </Button>
                     </div>
@@ -76,8 +76,8 @@ const Home = ({ myMarket, myNft }) => {
         </div>
         : (
 
-          <main style={{ padding: "3rem 0" }}>
-            <h2>You don't have any assets</h2>
+          <main style={{ padding: "3rem 0", height: "500px", color: "white"}}>
+            <h2 style={{margin: "180px"}}>You don't have any assets</h2>
           </main>
         )}
     </div>

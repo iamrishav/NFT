@@ -15,6 +15,9 @@ import Home from './Home.js'
 import Create from './CreateNFT.js'
 
 import './App.css';
+import lightBackgroundImage from './photo-1624280433509-b01afeaf68e5.avif'
+// src\frontend\components\ricardo-l-2bCEHNTW324-unsplash.jpg
+// D:\IIITD\Summer\BlockChain\NFT\src\frontend\components\photo-1624280433509-b01afeaf68e5.avif
 
 function App() {
   const [myNft, setNFT] = useState({})
@@ -52,7 +55,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App lightBackgroundImage" > 
+      {/* style={{  backgroundImage: `url(${lightBackgroundImage})`}}> */}
         <>
           <MyNavigation myHandler={myHandler} account={account} />
         </>
@@ -60,7 +64,7 @@ function App() {
           {loading ? (
             <div style={{ alignItems: 'center', minHeight: '80vh', display: 'flex', justifyContent: 'center' }}>
               <Spinner style={{ display: 'flex' }} animation="border" />
-              <p className='mx-3 my-0'>Awaiting Metamask Connection...</p>
+              <p className='mx-3 my-0' style={{color:"white"}} >Awaiting Metamask Connection...</p>
             </div>
           ) : (
             <Routes>

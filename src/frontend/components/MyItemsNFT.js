@@ -5,12 +5,12 @@ import { Row, Col, Card, Button } from 'react-bootstrap'
 function renderSoldItems(items) {
   return (
     <>
-      <h2>Sold</h2>
+      <h2 style={{color:"white"}}>Sold</h2>
       <Row xs={1} md={2} lg={4} className="g-4 py-3">
         {items.map((item, idx) => (
           <Col key={idx} className="overflow-hidden">
-            <Card>
-              <Card.Img variant="top" src={item.image} />
+            <Card style={{padding: "12px"}}>
+              <Card.Img variant="top" src={item.image}  style={{height:"300px"}}/>
               <Card.Footer>
                 For {ethers.utils.formatEther(item.totalPrice)} ETH - Recieved {ethers.utils.formatEther(item.price)} ETH
               </Card.Footer>
@@ -65,20 +65,20 @@ export default function MyListedItems({ myMarket, myNft, account }) {
     loadListedItems()
   }, [])
   if (loading) return (
-    <main style={{ padding: "1rem 0" }}>
+    <main style={{ padding: "1rem 0", color: "white"}}>
       <h2>Loading...</h2>
     </main>
   )
   return (
     <div className="flex justify-center">
       {listedItems.length > 0 ?
-        <div className="px-5 py-3 container">
-            <h2>Listed</h2>
+        <div className="px-5 py-3 container" >
+            <h2 style={{color:"white"}} >Listed</h2>
           <Row xs={1} md={2} lg={4} className="g-4 py-3">
             {listedItems.map((item, idx) => (
               <Col key={idx} className="overflow-hidden">
-                <Card>
-                  <Card.Img variant="top" src={item.image} />
+                <Card style={{padding: "12px"}}>
+                  <Card.Img variant="top" src={item.image}  style={{height:"300px"}}/>
                   <Card.Footer>{ethers.utils.formatEther(item.totalPrice)} ETH </Card.Footer>
                 </Card>
               </Col>
@@ -87,7 +87,7 @@ export default function MyListedItems({ myMarket, myNft, account }) {
             {soldItems.length > 0 && renderSoldItems(soldItems)}
         </div>
         : (
-          <main style={{ padding: "1rem 0" }}>
+          <main style={{ padding: "1rem 0", color:"white"}}>
             <h2>No listed assets</h2>
           </main>
         )}

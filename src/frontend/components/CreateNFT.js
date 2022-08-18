@@ -7,8 +7,8 @@ import { create as ipfsHttpClient } from 'ipfs-http-client'
 
 const ipfsClient = require('ipfs-http-client');
 // const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
-const projectId = '';
-const projectSecret = '';
+const projectId = '2DRXCCq048qwAilfcYM2w6PSure';
+const projectSecret = '8ca127e56b6db9162d939d9670371a1d';
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
 const client = ipfsClient.create({
   host: 'ipfs.infura.io',
@@ -61,16 +61,16 @@ const Create = ({ myMarket, myNft }) => {
   return (
     <div className="container-fluid mt-5">
       <div className="row">
-        <main role="main" className="col-lg-12 mx-auto" style={{ maxWidth: '1000px' }}>
+        <main role="main" className="col-lg-5 mx-auto" style={{ maxWidth: '1000px', height: "600px"}}>
           <div className="content mx-auto">
-            <Row className="g-4">
+            <Row className="g-4 #CE93D8">
               <Form.Control type="file" name="file" onChange={uploadToIPFS} required  />
 
               <Form.Control onChange={(e) => setName(e.target.value)} size="lg" required type="text" placeholder="Name" />
               <Form.Control onChange={(e) => setDescription(e.target.value)} size="lg" required as="textarea" placeholder="Description" />
               <Form.Control onChange={(e) => setPrice(e.target.value)} size="lg" required type="number" placeholder="Price in ETH" />
               <div className="d-grid px-0">
-                <Button onClick={createNFT} variant="primary" size="lg">
+                <Button onClick={createNFT} style={{backgroundColor: '#4A148C'}} size="lg">
                   Create & List NFT!
                 </Button>
               </div>

@@ -38,19 +38,19 @@ export default function MyPurchases({ myMarket, myNft, account }) {
   }, [])
 
   if (loading) return (
-    <main style={{ padding: "1rem 0" }}>
+    <main style={{ padding: "1rem 0", color: "white"}}>
       <h2>Your Data is Loading...</h2>
     </main>
   )
   return (
-    <div className="justify-center flex">
+    <div className="justify-center flex" style={{height: "1000px"}}>
       {myBuyings.length > 0 ?
         <div className="container px-5">
           <Row className="g-4 py-5" xs={1} lg={4} md={2}>
             {myBuyings.map((item, idx) => (
               <Col className="overflow-hidden" key={idx}>
-                <Card>
-                  <Card.Img src={item.image} />
+                <Card style={{padding: "12px"}}>
+                  <Card.Img src={item.image} style={{height:"300px"}}/>
                   <Card.Footer>{ethers.utils.formatEther(item.totalPrice)} ETH</Card.Footer>
                 </Card>
               </Col>
@@ -58,8 +58,8 @@ export default function MyPurchases({ myMarket, myNft, account }) {
           </Row>
         </div>
         : (
-          <main style={{ padding: "3rem 0" }}>
-            <h2>No Buyings till now</h2>
+          <main style={{ padding: "3rem 0", color: "white", height: "500px"}}>
+            <h2 style={{ margin: "130px"}} >No Buyings till now</h2>
           </main>
         )}
     </div>

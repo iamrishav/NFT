@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.lightBackgroundImage{
+  background: url("./photo-1624280433509-b01afeaf68e5.avif");
+  opacity: 2.8;
+  background-size: cover;
+  height: auto;
+}
