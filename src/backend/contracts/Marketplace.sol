@@ -13,6 +13,7 @@ contract Marketplace is ReentrancyGuard {
     address payable public immutable feeAccount; // the account that receives fees
     uint public immutable feePercent; // the fee percentage on sales 
     uint public itemCount; 
+    uint removeListingPrice = 1;
 
     struct Item {
         uint itemId;
@@ -72,6 +73,8 @@ contract Marketplace is ReentrancyGuard {
             msg.sender
         );
     }
+
+  
 
     function purchaseItem(uint _itemId) external payable nonReentrant {
         uint _totalPrice = getTotalPrice(_itemId);
