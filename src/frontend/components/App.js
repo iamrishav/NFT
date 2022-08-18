@@ -25,11 +25,9 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [account, setAccount] = useState(null)
   
-  // MetaMask Login/Connect
   const myHandler = async () => {
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
     setAccount(accounts[0])
-    // Get provider from Metamask, and Setting signer
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     const signer = provider.getSigner()
 
@@ -45,7 +43,6 @@ function App() {
     loadContracts(signer)
   }
   const loadContracts = async (signer) => {
-    // Get deployed copies of contracts
     const myMarket = new ethers.Contract(MarketplaceAddress.address, MarketplaceAbi.abi, signer)
     setMarketplace(myMarket)
     const myNft = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer)

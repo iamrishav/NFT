@@ -27,16 +27,13 @@ export default function MyListedItems({ myMarket, myNft, account }) {
   const [listedItems, setListedItems] = useState([])
   const [soldItems, setSoldItems] = useState([])
   const loadListedItems = async () => {
-    // Load all sold items that the user listed
     const itemCount = await myMarket.itemCount()
     let listedItems = []
     let soldItems = []
     for (let indx = 1; indx <= itemCount; indx++) {
       const i = await myMarket.items(indx)
       if (i.seller.toLowerCase() === account) {
-        // get uri url from myNft contract
         const uri = await myNft.tokenURI(i.tokenId)
-        // use uri to fetch the myNft metadata stored on ipfs 
         const response = await fetch(uri)
         const metadata = await response.json()
         
@@ -51,7 +48,6 @@ export default function MyListedItems({ myMarket, myNft, account }) {
           image: metadata.image
         }
         listedItems.push(item)
-        // Add listed item to sold items array if sold
         if (i.sold) soldItems.push(item)
       }
     }

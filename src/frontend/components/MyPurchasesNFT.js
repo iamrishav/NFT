@@ -11,7 +11,6 @@ export default function MyPurchases({ myMarket, myNft, account }) {
     const results = await myMarket.queryFilter(filter)
 
     const myBuyings = await Promise.all(results.map(async uniqueI => {
-      // fetch arguments from each result, get uri url from myNft contract, use uri to fetch the myNft metadata stored on ipfs 
       uniqueI = uniqueI.args
       const uri = await myNft.tokenURI(uniqueI.tokenId)
       const response = await fetch(uri)
