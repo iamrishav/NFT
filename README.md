@@ -22,7 +22,7 @@
 [Self made notes on Blockchain and Etherium](https://drive.google.com/file/d/1wfgyhrt7d4XwMMGSxgEZPCk7J2szOrHk/view?usp=sharing)
 
  ## References - 
- [DAPP university](https://github.com/dappuniversity/nft_marketplace)
+ [DAPP University Youtube](https://youtu.be/2bjVWclBD_s)
 
 
 
