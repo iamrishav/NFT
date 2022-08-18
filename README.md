@@ -19,7 +19,7 @@
 5. run project - npm run start
 
  ## Notes - 
-[Self made notes on Blockchain and Etherium](https://docs.google.com/document/d/1FiS0Gl7NXvtwBJIIJd7B-qP-QPB1pqeUDzZ6dKdkZGI/edit?usp=sharing)
+[Self made notes on Blockchain and Etherium](https://drive.google.com/file/d/1wfgyhrt7d4XwMMGSxgEZPCk7J2szOrHk/view?usp=sharing)
 
  ## References - 
  [DAPP university](https://github.com/dappuniversity/nft_marketplace)
