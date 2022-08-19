@@ -69,7 +69,7 @@ contract Marketplace is ReentrancyGuard {
   
 
     function purchaseItem(uint _itemId) external payable nonReentrant {
-        uint _totalPrice = getTotalPrice(_itemId);
+        uint _totalPrice = mreturnTotalETH(_itemId);
         Item storage item = items[_itemId];
         require(_itemId > 0 && _itemId <= itemCount, "assests doesn't exist");
         require(msg.value >= _totalPrice, "not enough ether to cover assets price and marketplace fee");
@@ -87,7 +87,7 @@ contract Marketplace is ReentrancyGuard {
             msg.sender
         );
     }
-    function getTotalPrice(uint _itemId) view public returns(uint){
+    function mreturnTotalETH(uint _itemId) view public returns(uint){
         return((items[_itemId].price*(100 + mpercentFee))/100);
     }
 }

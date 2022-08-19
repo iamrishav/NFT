@@ -37,7 +37,7 @@ export default function MyListedItems({ myMarket, myNft, account }) {
         const response = await fetch(uri)
         const metadata = await response.json()
         
-        const totalPrice = await myMarket.getTotalPrice(i.itemId)
+        const totalPrice = await myMarket.mreturnTotalETH(i.itemId)
         
         let item = {
           totalPrice,

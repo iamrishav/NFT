@@ -16,7 +16,7 @@ export default function MyPurchases({ myMarket, myNft, account }) {
       const response = await fetch(uri)
       const metadata = await response.json()
       
-      const totalPrice = await myMarket.getTotalPrice(uniqueI.itemId)
+      const totalPrice = await myMarket.mreturnTotalETH(uniqueI.itemId)
       let purchasedItemBundle = {
         totalPrice,
         price: uniqueI.price,

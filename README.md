@@ -1,6 +1,11 @@
 # IIITD NFT Marketplace
 
-## Technology Stack & Tools
+## Marketplace Flow -
+ - Seller mint Images as the NFT
+ - Seller list the NFT in the MarketPlace
+ - Payer can see and buy the NFT from the Marketplace
+
+## Technology  & Tools
 
 ## frontEnd -
  - ReactJS (Javascript Framework)
@@ -22,7 +27,15 @@
 [Self made notes on Blockchain and Etherium](https://drive.google.com/file/d/1wfgyhrt7d4XwMMGSxgEZPCk7J2szOrHk/view?usp=sharing)
 
  ## References - 
+ [openzepplin ERC721 standards](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#ERC721)
+ [Dapp university article](https://www.dappuniversity.com/articles/the-ultimate-ethereum-dapp-tutorial)
  [DAPP University Youtube](https://youtu.be/2bjVWclBD_s)
+
+ ## Demo Images of the Platform -
+ [Home Page](demoHome.png)
+ [Create Page](democreate.png)
+ [ListedItem Page](demoListedItems.png)
+ [Purchase Page](demoPurchases.png)
 
 
 

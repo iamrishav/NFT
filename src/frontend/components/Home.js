@@ -14,7 +14,7 @@ const Home = ({ myMarket, myNft }) => {
         const uri = await myNft.tokenURI(item.tokenId)
         const response = await fetch(uri)
         const metadata = await response.json()
-        const totalPrice = await myMarket.getTotalPrice(item.itemId)
+        const totalPrice = await myMarket.mreturnTotalETH(item.itemId)
         items.push({
           totalPrice,
           itemId: item.itemId,
