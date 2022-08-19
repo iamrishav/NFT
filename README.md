@@ -32,10 +32,10 @@
  [DAPP University Youtube](https://youtu.be/2bjVWclBD_s)
 
  ## Demo Images of the Platform -
- [Home Page](demoHome.png)
- [Create Page](democreate.png)
- [ListedItem Page](demoListedItems.png)
- [Purchase Page](demoPurchases.png)
+ ![Home Page](demoHome.png)
+ ![Create Page](democreate.png)
+ ![ListedItem Page](demoListedItems.png)
+ ![Purchase Page](demoPurchases.png)
 
 
 
